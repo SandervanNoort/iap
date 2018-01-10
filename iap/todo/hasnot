@@ -1,0 +1,9 @@
+        elif operator == "hasnot":
+            labels = set(label_string.split(",")[0].split(
+                iap.CONFIG["settings"]["multi_sep"]))
+            pieces = [piece for piece in all_pieces
+                      if len(labels.intersection(piece_to_labels(piece))) > 0]
+            labels = set(label_string.split(",")[1].split(
+                iap.CONFIG["settings"]["multi_sep"]))
+            pieces = [piece for piece in pieces
+                      if len(labels.intersection(piece_to_labels(piece))) == 0]

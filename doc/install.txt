@@ -1,0 +1,67 @@
+- install required python packages
+    <ubuntu-package>         : <imported module>
+    python-matplotlib        : matplotlib
+    python-mysqldb           : MySQLdb
+    python-numpy             : numpy
+    python-paramiko          : paramiko
+    python-scipy             : scipy.stats
+
+- install other required programs
+    ttf-mscorefonts-installer (rm ~/.matplotlib/fontcache)
+
+- Download and extract pyfig (from same source as iap)
+
+- Add iap and pyfig to your PYTHONPATH
+  export PYTHONPATH=/path/to/iap-version:/path/to/pyfig-version
+
+- cp doc/local.ini config/local.ini
+  => Copy the template of the configuration
+
+- edit config/local.ini
+  => Fill in the local mysql parameters
+
+- (optional) run "bin/iap_cmd.py -sql"
+  => Create local database and users
+     (this can also be done manually)
+
+- run "bin/iap_cmd.py -table ALL
+  => create all essential tables
+
+- run "bin/iap_cmd.py -fill age
+  => Fill questionnaire and age distribution tables
+
+== As an example, we are going to import dutch 2011 data ==
+
+- run "bin/iap_cmd.py -noaa nl11 -download"
+  => Download and import weather data
+
+- run "bin/iap_cmd.py -google nl11 -download"
+  => Download and import google data
+
+- run "bin/iap_cmd.py -eiss nl11 -download"
+  => Download and import EISN data
+
+- Get automatic ssh access to epiwork 2011 data
+    - ssh-keygen -t dsa
+    - send ~/.ssh/id_dsa.pub to Klaas
+    - (klaas: cat id_dsa.pub >> ~/.ssh/authorized_keys)
+
+- edit "config/local.ini"
+  => Fill in the epiwork user
+     [host]
+        [[epi11]]
+            user = <epiwork_user>
+            host = toast.influenzanet.info
+
+- run "bin/iap_cmd.py -inet nl11 -download"
+  => Download and import Influenzanet data
+
+- Download any ini file from influenzanet.info
+    wget http://results.influenzanet.info/results/ini/nl_2011_climate_ilit.ini
+    run "bin/iap_cmd.py -ini nl_2011_climate_ilit.ini"
+    => this creates png and csv files
+
+- (optional) install results.influenzanet.info website code
+    - Download influenzanet website code (from same source as iap)
+    - add influenzanet-<version>/python to PYTHONPATH
+    - run "influenzanet-<version>/python/make.py nl11 -ALL"

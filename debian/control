@@ -1,0 +1,12 @@
+Source: iap
+Section: python
+Priority: extra
+Maintainer: Sander van Noort <Sander.van.Noort@gmail.com>
+Build-Depends: debhelper (>= 7), python-support, python (>=2.7)
+Standards-Version: 3.9.1
+
+Package: iap
+Architecture: all
+Depends: ${misc:Depends}, ${python:Depends}, python-configobj
+Description: Influenza Analyses Program
+ Analyse Influenzanet data

@@ -1,0 +1,22 @@
+start_date:
+    date after 1st survey
+    (alternative: 6 days before first survey)
+
+    delete from intake where start_date >= snapshot
+                          or start_date > end_date
+
+    delete from survey onset < start_date
+
+    joins: date = start_date
+
+end_date:
+    date of the last survey
+
+    end_date=max(sdate) where sdate < snapshot
+
+    delete from survey where onset>end_date
+
+    leaves: date = end_date + 1 day
+
+
+TODO: datasets set updated=NULL where category=leaves

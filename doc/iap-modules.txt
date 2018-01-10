@@ -1,0 +1,27 @@
+505 utils
+
+80 tools
+
+77 mathtools
+
+411 download
+
+625 Convert(period) []
+
+384 Ini (inifile) []
+
+797 data
+        Series (options) []
+        Data (options) [Series]
+        Table(datasets, plot_settings) [Data]
+
+251 Export(ini) [Data, Table]
+
+164 Analyses()  [Data, Ini, mathtools]
+
+645 fig
+        Barplot (fig, plot_settings, datasets) [Data, Table, mathtools]
+        Plot (fig, plot_settings, datasets) [Data, Analyses]
+        Fig.dia(fig, plot_settings, datasets) [Plot, Barplot]
+
+570 Oddr [Ini, Series]

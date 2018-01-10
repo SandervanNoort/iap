@@ -1,0 +1,26 @@
+iap/config/config.ini
+[country]
+    [[host]]
+        <season> = <cs_host>
+    [[inet]]
+        <season> = ..
+[settings]
+    max_year = ..
+
+iap/config/local.ini
+    [host]
+        [[<cs_host>]]
+
+create iap/config/db/<cs>.ini
+
+====
+py.py iap/bin/iap_cmd.py -inet <cs> -download -overwrite
+
+webiap/config/diagrams.ini
+    seasons = ..
+    linreg_seasons = ..
+
+webiap/config/menus.ini
+[season]
+    options = ..
+    seasons =

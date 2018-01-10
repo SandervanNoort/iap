@@ -1,0 +1,5 @@
+/config/local.ini
+*.pyc
+/download
+/export
+*~

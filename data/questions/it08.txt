@@ -1,0 +1,156 @@
+q1000 Codice postale dove vivi
+
+q1001 Sesso
+  1: Maschio
+  2: Femmina
+
+q1002 Data di Nascita
+
+q1005 Codice postale dove lavori/vai a scuola
+
+q2000 Occupazione giornaliera
+  1: Studio
+  2: Lavoro
+  3: Casa
+  4: Altro
+
+q2001 Quale il mezzo di trasporto che usi quotidianamente?
+  0: nessuno di questi
+  1: Moto o bicicletta
+  2: Auto
+  3: A piedi
+  4: Trasporti pubblici
+
+q2002 In media, quante volte ti ammali in un anno?
+  1: Meno di due
+  2: Da due a cinque
+  3: Piu' di cinque
+
+q2004 Soffri di una delle seguenti patologie?
+  1: Asma
+  1: Patologia respiratoria cronica
+  2: Diabete
+  2: Patologia cronica non respiratoria
+  3: Nessuna delle due
+  3: Nessuna delle due
+
+q2005 Sei un fumatore/fumatrice?
+  1: Si, regolarmente
+  2: Si, a volte
+  3: Non fumo
+
+q2008 Con che frequenza pratichi attivita' sportiva?
+  1: Meno di un'ora alla settimana
+  2: Da una a quattro ore per settimana
+  3: Piu' di quattro ore per settimana
+
+q2009 Come si caratterizza il tuo nucleo familiare?
+  1: Vivo da solo/sola
+  2: Il mio nucleo familiare include solo adulti
+  3: Il mio nucleo familiare include anche bambini
+
+q2010 I bambini frequentano l'asilo o la scuola?
+  1: Si, vanno a scuola/asilo
+  2: No, rimangono a casa
+
+q2011 Hai animali da compagnia?
+  1: Si, gatti
+  2: Si, cani
+  3: Si, uccelli
+  4: Si, altro
+  5: Non possiedo animali da compagnia
+
+q2040 Ti sei vaccinato contro l'influenza, quest'anno?
+  1: Si
+  2: No
+  2: Si, contro la nuova influenza da H1N1
+
+q2041 Perch√© hai deciso di vaccinarti?
+
+q2042 Perch√© hai deciso di non vaccinarti?
+
+q2060 Come sei venuto a conoscenza di Influweb?
+  1: da un programma TV
+  2: da un programma alla radio
+  3: da quotidiani/riviste
+  4: dal web
+  5: da una conferenza
+  6: da un amico
+  7: dal team Influweb
+  8: altro
+
+q3000 Dall'ultima volta che hai compilato il questionario, hai sofferto di qualcuno di questi sintomi?
+  1: Congestione nasale
+  2: Tosse
+  3: Mal di gola
+  4: Forte mal di testa
+  5: Dolori muscolari diffusi
+  6: Dolori al petto
+  7: Mal di stomaco
+  8: Diarrea
+  9: Nausea
+  10: Brividi, pelle d'oca
+  11: Debilitazione, spossatezza
+  12: Irritazione agli occhi
+  13: Febbre
+  14: Non ho avuto nessuno dei sintomi precedenti
+
+q3001 Quando hanno avuto inizio i sintomi?
+
+q3002 Hai avuto la febbre? Se si, qual'√® stato il valore massimo?
+  1: Non ho avuto febbre
+  2: 37-37,5 ∞C
+  3: 37,5-38 ∞C
+  4: 38-38,5 ∞C
+  5: 38,5-39 ∞C
+  6: Pi&ugrave di 39 ∞C
+  7: Non l'ho misurata
+
+q3003 Quando ha oltrepassato i 38 gradi per la prima volta?
+
+q3004 La febbre √® iniziata improvvisamente?
+  1: Si
+  2: No
+  3: Non so
+
+q3005 Hai consultato telefonicamente un medico?
+  1: Medico di base
+  2: Continuit&agrave; assistenziale (Guardia Medica)
+  3: 118
+  4: No
+
+q30051 Sei stato visitato da una delle seguenti figure sanitarie?
+  1: Medico di base
+  2: Continuit&agrave; assistenziale (Guardia Medica)
+  3: Pronto Soccorso
+  4: Nessuna di queste
+
+q30052 In Pronto Soccorso ti sei recato:
+
+q3006 Qual'√® stata la diagnosi?
+
+q3007 Hai dovuto modificare la tua routine quotidiana?
+  1: Si, sono rimasto a casa/ospedale
+  2: Si, ma sono andato ugualmente a lavorare/a scuola
+  3: No, nessun cambiamento
+
+q3008 Per quanti giorni sei rimasto a casa?
+  1: 1 giorno
+  2: 2-3 giorni
+  3: 4-6 giorni
+  4: Una settimana
+  5: Due settimane
+  6: Tre settimane
+
+q3009 Hai assunto qualcuno dei seguenti tipi di farmaci?
+  1: Antipiretico (febbre)
+  2: Analgesico (dolore)
+  3: Antitosse
+  4: Antivirale - Tamiflu
+  5: Antivirale - Relenza
+  6: Non ho assunto nessuno di questi farmaci
+
+q3010 Quando hai iniziato l'assunzione degli antivirali?
+
+q3011 Come ti senti oggi??
+

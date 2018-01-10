@@ -1,0 +1,246 @@
+alergias Alergias
+  1: Alergias
+
+andar Andar
+  1: 1;Andar ...;0
+0;1º;1
+0;2º;2
+0;3º;3
+0;4º;4
+0;5º;5
+0;6º;6
+0;7º;7
+0;8º;8
+0;9º;9
+0;10º;10
+0;11º;11
+0;12º;12
+0;13º;13
+0;14º;14
+0;15º;15
+0;16º;16
+0;17º;17
+0;18º;18
+0;19º;19
+0;20º;20
+0;21º;21
+0;22º;22
+0;23º;23
+0;24º;24
+0;25º;25
+0;26º;26
+0;27º;27
+0;28º;28
+0;29º;29
+0;30º;30
+
+ano Ano de Nascimento
+
+asma Asma
+  1: Asma
+
+atividade Atividade
+  1: Trabalho ou estudo fora de casa
+  2: Fico em casa
+
+auto_imune Auto Imune
+  1: Doença auto-imune
+
+bairro Bairro
+
+cidade Cidade
+  1: Salvador
+  2: Outra cidade
+
+cor Cor
+  1: Branco
+  2: Negro
+  3: Pardo
+  4: Outro
+
+dengue Teve dengue
+  1: Sim
+  2: Não
+  3: Não sei
+
+diabetes Diabetes
+  1: Diabetes
+
+escolaridade Escolaridade
+  1: Analfabeto
+  2: Até 4ª série
+  3: Até 8ª série
+  4: Ensino médio
+  5: Ensino superior
+
+m_alergias Medicacao alergias
+  1: 1;Usa medicação ...;0
+0;Não;1
+0;Sim;2
+
+m_asma Medicacao asma
+  1: 1;Usa medicação ...;0
+0;Não;1
+0;Sim;2
+
+m_auto_imune Medicacao auto imune
+  1: 1;Usa medicação ...;0
+0;Não;1
+0;Sim;2
+
+m_diabetes Medicacao diabetes
+  1: 1;Usa medicação ...;0
+0;Não;1
+0;Sim;2
+
+m_pressao_alta Medicacao pressao alta
+  1: 1;Usa medicação ...;0
+0;Não;1
+0;Sim;2
+
+mes Mes de Nascimento
+
+numero Numero
+  1: 1;Faixa de número ...;0
+0;S/N;1
+0;Entre 01 e 40;20
+0;Entre 41 e 80;60
+0;Entre 81 e 120;100
+0;Entre 121 e 160;140
+0;Entre 161 e 200;180
+0;Entre 201 e 240;220
+0;Entre 241 e 280;260
+0;Entre 281 e 320;300
+0;Entre 321 e 360;340
+0;Entre 361 e 400;380
+0;Entre 401 e 500;450
+0;Entre 501 e 1000;750
+0;Acima de 1000;1000
+
+pressao_alta Pressão Alta
+  1: Pressão alta (Hipertensão arterial)
+
+q1000 zona_inf
+
+q2012 Deseja se inscrever no newsletter do Dengue na Web
+  0: Não
+  1: Sim
+
+rua Rua
+
+setor setor
+
+sexo Sexo
+  F: Feminino
+  M: Masculino
+
+tipo Tipo de Residencia
+  1: Casa
+  2: Apartamento
+
+valor Total de pessoas
+  <?php
+  global $mosConfig_absolute_path;
+  include($mosConfig_absolute_path.'/questionnaires/total_family_populate.php');
+  return totalFamilyPopulate();
+?>: 
+
+q2000 Você teve febre nos últimos 7 (sete) dias?
+  0: Não
+  1: Sim
+
+q3001 Qual a data de início da febre?
+
+q3002 Qual a temperatura da febre?
+  1: Entre 37,5º e 37,9ºC
+  2: Acima de 38º
+  3: Não sei
+  1: Entre 37,5º e 37,9ºC
+  2: Entre 38º e 38,5ºC
+  3: Entre 38,6º e 39ºC
+  4: Mais de 39ºC
+  5: Não medi
+
+q3004 A febre começou de repente?
+  1: Sim
+  2: Não
+  3: Não sei
+  1: Sim
+  2: Não
+  3: Não sei
+
+q3011 Qual a duração da febre?
+  1: Ainda tenho febre
+  2: Por menos de um dia
+  3: Entre 1 e 3 dias
+  4: Entre 4 e 7 dias
+  5: Mais de 7 dias
+  1: Ainda tenho febre
+  2: Por menos de um dia
+  3: Entre 1 e 3 dias
+  4: Entre 4 e 7 dias
+  5: Mais de 7 dias
+
+q3000 Na última semana apresentou algum desses sintomas?
+  01: Tontura
+  02: Vômito constante
+  03: Dor abdominal
+  04: Dor de cabeça
+  05: Dor de garganta
+  06: Dor muscular generalizada
+  07: Dor nas articulações
+  08: Dor no fundo dos olhos
+  09: Sangramento da gengiva ou do nariz
+  10: Moleza / Cansaço
+  11: “Pintas” vermelhas ou vermelhidão na pele (exantema)
+  12: Suor frio
+  13: Não tive nenhum desses sintomas
+  01: Febre
+  02: Tontura
+  03: Vômito constante
+  04: Dor abdominal
+  05: Dor de cabeça
+  06: Dor de garganta
+  07: Dor muscular generalizada
+  08: Dor nas articulações
+  09: Dor no fundo dos olhos
+  10: Sangramento da gengiva ou do nariz
+  11: Moleza / Cansaço
+  12: “Pintas” vermelhas ou vermelhidão na pele (exantema)
+  13: Suores frios
+  14: Não tive nenhum desses sintomas
+
+q3005 Foi atendido por um médico?
+  1: Sim, SUS
+  2: Sim, privado
+  3: Não
+  1: Sim, SUS
+  2: Sim, privado
+  3: Não
+
+q3007 Deixou de realizar as atividades diárias?
+  1: Sim
+  2: Não
+  1: Sim
+  2: Não
+
+q3012 Há outras pessoas em sua casa com febre?
+  1: Sim, 1 pessoa
+  2: Sim, 2 ou mais pessoas
+  3: Não
+  4: Não sei
+  1: Sim, 1 pessoa
+  2: Sim, 2 ou mais pessoas
+  3: Não
+  4: Não sei
+
+q3013 Encontrou em sua residência ou local de trabalho o mosquito da dengue (Aedes aegypti)?
+  1: Sim, na residência
+  2: Sim, no trabalho
+  3: Não encontrei
+  4: Não sei identificar
+  1: Sim, na residência
+  2: Sim, no trabalho
+  3: Não encontrei
+  4: Não sei identificar
+

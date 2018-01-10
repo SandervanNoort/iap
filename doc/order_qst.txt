@@ -1,0 +1,48 @@
+zipcode home
+zipcode work
+gender
+birth
+
+daily routine 
+highest edu 
+type of job
+
+transport 
+time in public
+contacts
+
+vaccine
+vaccine date1 / date2
+vaccine invitation
+vaccine reason
+vaccine non-reason
+vaccine prev season
+
+vaccine
+vaccine date1 / date2
+vaccine invitation
+vaccine reason
+vaccine non-reason
+
+colds per year
+chronic 
+allergy
+drugs
+pregnant 
+trimester
+
+smoking 
+sport
+vegetables/fruit
+supplements
+diet
+
+household has children
+household ages
+household occupation
+household size 
+children go to nursery 
+pets
+
+who is filling
+how did you learn about influenzanet

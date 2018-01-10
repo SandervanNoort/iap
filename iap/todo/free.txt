@@ -1,0 +1,6 @@
+data.get_where
+#         pieces2 = [re.sub(r"FREE\(.*?\)", "%%", piece)
+#                    for piece in pieces]
+#         if pieces != pieces2:
+#             return " OR ".join(["label LIKE \"{0}\"".format(piece)
+#                                 for piece in pieces2])

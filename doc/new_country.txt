@@ -1,0 +1,25 @@
+iap:
+config/config.ini
+  [country]
+    [inet] src host
+  [epi]
+
+  [settings]
+    max_year =
+
+config/db/<cs>.ini
+    intake: qid, uid
+    survey: sid, uid, sdate, s110, s210
+
+config/lang/*.ini
+    [country]
+        <cs> = ...
+
+webiap:
+    diagrams: inet = ..,<cs>
+    menu: country = ..
+    copy_docs.py
+
+    linreg_seasons 
+    all_seasons
+    plot_end_year
