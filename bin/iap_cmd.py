@@ -60,10 +60,10 @@ def do_table(table_list):
                     "Group {0}: {1}".format(key, ", ".join(values))
                     for key, values in groups.items()])))
         elif table == "ALL":
-            do_table(iap.TABLES.keys())
+            do_table(iap.config.TABLES.keys())
         elif table in groups:
             do_table(groups[table])
-        elif table in iap.TABLES:
+        elif table in iap.config.TABLES:
             logger.info("Creating table {0}".format(table))
             iap.utils.create_table(table)
         else:
@@ -234,8 +234,7 @@ def do_sql(force=False):
 
     params = iap.config.LOCAL["db"]
     passwd = getpass.getpass("MySQL root password: ")
-    params["root"] = "-u root " + (
-        "-p{0}".format(passwd) if passwd != "" else "")
+    params["root"] = passwd
 
     if not iap.tools.sql_check_root(params["root"]):
         return

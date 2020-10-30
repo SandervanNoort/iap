@@ -23,35 +23,35 @@ for table, qa_old, qa_new in old_news:
         srcs.append(convert.src)
 
 
-        print convert.src
+        print(convert.src)
         for column in iap.TABLE[table].keys():
             if column == qold:
-                print "rename section {0} to {1}".format(column, qnew)
+                print("rename section {0} to {1}".format(column, qnew))
 
 
         for qa_cur in convert.dbini[table].keys():
             qcur, scur, acur = iap.utils.split_qa(qa_cur, ("__", "_"))
 
             if qa_cur == qa_old:
-                print "full rename {0} to {1}".format(qa_cur, qa_new)
+                print("full rename {0} to {1}".format(qa_cur, qa_new))
             elif qcur == qold:
-                print "col rename {0} to {1}{2}{3}".format(qa_cur, 
-                        qnew, scur, acur)
+                print("col rename {0} to {1}{2}{3}".format(qa_cur,
+                        qnew, scur, acur))
 
         for lang in iap.TRANSLATE.keys():
             if table not in iap.TRANSLATE[lang]:
                 continue
             if qold in iap.TRANSLATE[lang][table]:
-                print "rename translate {0}:{1} to {2}".format(table,
-                        qold, qnew)
+                print("rename translate {0}:{1} to {2}".format(table,
+                        qold, qnew))
             else:
-                print "{0} not found in translate {1}".format(qold, table)
+                print("{0} not found in translate {1}".format(qold, table))
 
         if qold in iap.TABLE[table]:
-            print "rename {0}:{1} to {2}".format(table,
-                    qold, qnew)
+            print("rename {0}:{1} to {2}".format(table,
+                    qold, qnew))
         else:
-            print "{0} not found in {1}".format(qold, table)
+            print("{0} not found in {1}".format(qold, table))
 
 #         with codecs.open("/tmp/{0}.ini".format(convert.src),
 #                          "w", encoding="utf8") as fobj:

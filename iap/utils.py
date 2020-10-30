@@ -47,6 +47,7 @@ def connect():
         raise IAPError("{0}".format(inst))
     config.CURSOR = conn.cursor(cursorclass=MySQLdb.cursors.DictCursor)
     conn.autocommit(True)
+    config.CURSOR.execute('set sql_mode=\'\'')
 
 
 def get_tbl(table, orig, period):
@@ -477,7 +478,8 @@ def query_many(sql, params=None, reconnect=False, sql_warnings=True):
         sql = re.sub(r"(\s)VALUES(\s)", "\\1values\\2", sql)
         config.CURSOR.executemany(sql, params)
     except MySQLdb.Error as inst:
-        if inst[0] == 2006 and not reconnect:
+        if not reconnect:
+            # also check if code 2006
             connect()
             return query_many(sql, params, reconnect=True)
         raise IAPError(""""SQL error:
@@ -512,7 +514,8 @@ def query(sql, params=None, many=False, reconnect=False, sql_warnings=True):
         else:
             config.CURSOR.execute(sql)
     except MySQLdb.Error as error:
-        if error[0] == 2006 and not reconnect:
+        if not reconnect:
+            # todo: also check if error code = 2006
             connect()
             return query(sql, params, many, reconnect=True)
         else:

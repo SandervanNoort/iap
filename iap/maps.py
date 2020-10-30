@@ -39,18 +39,18 @@ class FigMap(object):
         elif self.settings["lang"] == "en":
             locale.setlocale(locale.LC_ALL, str("C"))
 
-        basename = os.path.join(config.CONFIG["dir"]["data"], "maps",
+        basename = os.path.join(config.LOCAL["dir"]["data"], "maps",
                                 self.settings["mapname"])
         self.imgname = os.path.join(basename, "map.png")
 
         self.settings["fontfile"] = os.path.join(
-            config.CONFIG["dir"]["data"],
+            config.LOCAL["dir"]["data"],
             "{0}.ttf".format(self.settings["fontfamily"]))
         if not os.path.exists(self.settings["fontfile"]):
             self.settings["fontfile"] = os.path.join(
-                config.CONFIG["dir"]["data"], "Arial.ttf")
+                config.LOCAL["dir"]["data"], "Arial.ttf")
         self.settings["fontfile_italic"] = os.path.join(
-            config.CONFIG["dir"]["data"], "Arial_Italic.ttf")
+            config.LOCAL["dir"]["data"], "Arial_Italic.ttf")
 
         for key, value in self.settings.items():
             if key.endswith("_color"):
@@ -79,7 +79,7 @@ class FigMap(object):
         """Add logo in lower left corner"""
 
         logo = PIL.Image.open(
-            os.path.join(config.CONFIG["dir"]["data"], "logo.png"))
+            os.path.join(config.LOCAL["dir"]["data"], "logo.png"))
         self.img.paste(
             logo,
             (self.settings["margin"]["logo"],

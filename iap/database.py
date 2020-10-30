@@ -267,11 +267,9 @@ class DataBase(object):
                 daydata["inet_incidence"] = int(
                     100000 * daydata["inet_cases"] /
                     daydata["inet_actives"] * 7 / average)
-                print(daydata)
                 props = tools.get_prop(daydata["inet_cases"],
                                        daydata["inet_actives"],
                                        method="jeffreys")
-                print(props)
                 # method="wilson-continuity")
                 daydata["inet_incidence"] = int(props[1] * 100000 * 7 /
                                                 average)

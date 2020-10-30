@@ -102,6 +102,8 @@ def get_range(country, season, threshold, average=None, inet=False):
 
     if min_date is None:
         datadict = get_datadict(country, season)
+        if len(datadict) == 0:
+            return None, None
         max_val = max(datadict.values())
         critical = threshold * max_val / 100
         min_date, max_date = None, None

@@ -1,0 +1,10 @@
+configobj
+mysqlclient
+matplotlib==1.5.3
+natsort
+chardet
+scipy
+ephem
+pexpect
+paramiko
+file-magic

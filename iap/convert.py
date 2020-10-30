@@ -639,7 +639,7 @@ class Convert(object):
                     fname, TMP_SQL,
                     ftypes=["application/sql-mysql",
                             "application/sql-mysql_application/sql-mysql"],
-                    options=[("rename_tbl", rename_tbl)],
+                    options=[("rename_tbl", rename_tbl), ("extra", "set sql_mode='';")],
                     unpack=True)
                 if TMP_SQL not in converted:
                     logger.error("Not converted: {0}".format(fname))
