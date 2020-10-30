@@ -8,3 +8,4 @@ ephem
 pexpect
 paramiko
 file-magic
+pillow
