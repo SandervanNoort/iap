@@ -746,7 +746,7 @@ class Convert(object):
     def get_griepencorona_tables(self):
         start = datetime.date(2020, 11, 16)
         end = datetime.date(2020, 5, 1)
-        end = max(datetime.date.today(), end)
+        end = max(datetime.date.today() - datetime.timedelta(days=1), end)
 
         tables = {}
         while start <= end:
