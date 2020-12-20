@@ -41,7 +41,7 @@ def get_cmd_options():
     parser.add_argument("-overwrite", action="store_true", default=False)
     parser.add_argument("-sql", action="store_true", default=False)
     parser.add_argument("-force", action="store_true", default=False)
-    parser.add_argument("-d", action="store", dest="debug", default="error")
+    parser.add_argument("-d", action="store", dest="debug", default="warning")
     return parser.parse_args()
 
 

@@ -1,0 +1,195 @@
+timestamp: None
+  builtin
+
+Q0: Adesione Q0
+   0: Sì
+   1: No
+   2: Someone else
+
+Q1: Adesione Q1
+   0: Maschio
+   1: Femmina
+
+Q2: Adesione Q2
+  wok.pollster.datatypes.YearMonth
+
+Q3: Adesione Q3
+  wok.pollster.datatypes.PostalCode
+
+Q4: Adesione Q4
+   0: Impiego retribuito, tempo pieno
+   1: Impiego retribuito, part time
+   2: Lavoratore autonomo (libero professionista, commerciante, contadino, etc.)
+   3: Studente (scuola dell'obbligo, scuola superiore, università, etc.)
+   4: Casalingo/a
+   5: Senza impiego
+   6: Congedo a lungo termine dall'attività lavorativa (per maternità/paternità, malattia, etc.)
+   7: In pensione
+   8: Altro
+
+Q4b: What is the first part of your school/college/workplace postcode?
+   0: Postcode:
+   1: I don't know/can't remember
+   2: Not applicable (e.g. don't have a fixed workplace)
+
+Q4c: Adesione Q4c
+   0: Professionista (es. manager, medico, insegnante, infermiera, ingegnere, etc.)
+   1: Lavoro d'ufficio (es. amministratore, assistente finanziario, segretaria etc.)
+   2: Vendita al dettaglio, ristorazione ospitalità e tempo libero (es. commesso di negozio, cameriere, barista, istruttore di palestra etc.)
+   3: Lavoratore manuale specializzato (es. meccanico, elettricista, tecnico, etc.)
+   4: Lavoratore manuale di altro tipo (es. addetto alle pulizie, addetto alla sicurezza, autista, etc.)
+   5: Altro
+
+Q4d: Adesione Q4d
+   0: Non possiedo alcuna qualifica formale
+   1: Diploma di scuola superiore
+   2: A-levels or equivalent (e.g. Higher, NVQ Level3, BTEC)
+   3: Diploma di laurea triennale 
+   4: Diploma di laurea magistrale o titolo di studio superiore (Ph.D.)
+   5: Sono ancora in formazione scolastica
+
+Q5: Adesione Q5 
+   0: Gruppi (più di 10) di bambini o adolescenti (minori di 18 anni)
+   1: Gruppi (piu' di 10) di persone di eta' superiore a 65 anni? 
+   2: Pazienti
+   3: Grandi quantita' di persone (piu' di 10 per volta)
+   4: Nessuno di questi
+
+Q6: Adesione Q6
+   0: 0-4 anni
+   1: 5-18 anni
+   2: 19-44 anni
+   3: 45-64 anni
+   4: 65+
+
+Q6b: Adesione Q6b
+   0: Nessuno
+   1: 1
+   2: 2
+   3: 3
+   4: 4
+   5: 5
+  99: Piu' di 5
+
+Q7: Adesione Q7
+   0: A piedi
+   1: Bicicletta
+   2: Moto/scooter
+   3: Auto
+   4: Mezzi pubblici (bus, treno, metropolitana, etc.)
+   5: Altro
+
+Q7b: Adesione Q7b
+   0: Non uso i mezzi pubblici
+   1: 0-30 minuti
+   2: 30 minuti - 1.5 ore
+   3: 1.5 - 4 ore
+   4: Piu' di 4 ore
+
+Q8: Adesione Q8
+   0: Mai
+   1: Una o due volte all'anno
+   2: Tra 3 e 5 volte all'anno
+   3: Tra 6 e 10 volte all'anno
+   4: Piu' di 10 volte all'anno
+   5: Non so
+
+Q9: Adesione Q9
+   0: Si
+   1: No
+   2: Non so
+
+Q10: Adesione Q10
+   0: Si
+   1: No
+   2: Non so
+
+Q10b: Adesione Q10b
+   1: Scegli la data:
+   0: Non so/non ricordo
+
+Q10c: Adesione Q10c
+   0: Appartengo ad una categoria a rischio (es. in gravidanza, over 65, condizione di salute pregressa etc)
+   1: Il vaccino diminuisce il rischio di prendere l'influenza
+   2: Il vaccino diminuisce il rischio di contagio per gli altri
+   3: Me l'ha raccomandato il dottore
+   4: Mi e' stato raccomandato sul lavoro/a scuola
+   5: Il vaccino era facilmente reperibile e facile da somministrare
+   6: Il vaccino era gratis
+   7: Non voglio perdere giorni di lavoro/scuola
+   8: Mi vaccino tutti gli anni
+   9: Altro
+
+Q10d: Adesione Q10d
+   0: Ho intenzione di vaccinarmi ma non l'ho ancora fatto
+   1: Non mi e' stato offerto di vaccinarmi
+   2: Non appartengo ad alcuna categoria a rischio
+   3: E' meglio costruire le proprie difese immunitarie in modo naturale
+   4: Ho dei dubbi sull'efficacia del vaccino
+   5: L'influenza e' una malattia di minore importanza
+   6: Non credo che mi ammalero' di influenza
+   7: Ritengo che il vaccino possa causare l'influenza
+   8: Ho timore che il vaccino non sia sicuro o possa causare malattie 
+   9: Non mi piace ricevere vaccinazioni
+  10: Il vaccino non era facilmente reperibile
+  11: Il vaccino non era gratis
+  12: Nessun motivo in particolare
+  13: Nonostante le raccomandazioni del mio dottore, non ho ricevuto la vaccinazione
+  14: Altro
+
+Q11: Adesione Q11
+   0: No
+   1: Asma
+   2: Diabete
+   3: Patologia polmonare
+   4: Patologia cardiovascolare
+   5: Patologia renale
+   6: Immunosoppressione (dovuta a splenectomia, trapianto d'organo, immunodeficienza acquisita, trattamento anti cancro, etc)
+
+Q12: Adesione Q12
+   0: Si
+   1: No
+   2: Non so/preferisco non rispondere
+
+Q12b: Adesione Q12b
+   0: Primo trimestre (settimane 1-12)
+   1: Secondo trimestre (settimane 13-28)
+   2: Terzo trimestre (settimana 29 - parto)
+   3: Non so/preferisco non rispondere
+
+Q13: Adesione Q13
+   0: No
+   1: Si, occasionalmente
+   2: Si, quotidianamente, meno di dieci sigarette
+   3: Si, quotidianamente, piu' di dieci sigarette 
+   4: Non so/preferisco non rispondere
+
+Q14: Adesione Q14
+   1: Febbre da fieno
+   2: Allergia ad acari della polvere
+   3: Allergia al pelo di animali domestici
+   4: Altre allergie che causano sintomi respiratori (es. occhi arrossati e lacrimevoli)
+   5: Non ho allergie che causano sintomi respiratori
+
+Q15: Adesione Q15
+   0: Nessun regime alimentare speciale
+   1: Vegetariano
+   2: Vegano
+   3: Ipocalorico
+   4: Altro
+
+Q16: Adesione Q16
+   0: No
+   1: Si, uno o piu' cani
+   2: Si, uno o piu' gatti
+   3: Si, uno o piu' uccelli
+   4: Si, uno o piu' animali di altro tipo
+
+Q17: Where did you first hear about the flusurvey?
+   0: On radio or television
+   1: In the newspaper or in a magazine
+   2: Via an internet site (search engine or link)
+   3: By poster
+   4: Via family or friends
+   5: Via school or work
+

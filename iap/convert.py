@@ -21,12 +21,13 @@ import logging
 import six
 import natsort
 import mconvert
+import datetime
 
 from .exceptions import IAPError
 from . import utils, config, tools
 
 EXTENSIONS = {"zip": "zip", "epi": "sql.gz", "sql": "sql.bz2",
-              "dump": "dump"}
+              "dump": "dump", "griepencorona": "sql.bz2"}
 TMP_SQL = "/tmp/new.sql"
 logger = logging.getLogger(__name__)
 
@@ -170,7 +171,7 @@ class Convert(object):
         if self.src is None:
             return
 
-        if not utils.table_exists(self.tables[table, "orig"]):
+        if not utils.table_exists(self.tables[table, "orig"]) and self.src != 'nb20':
             logger.error("No downloaded {table} data for src: {src}".format(
                 table=table, src=self.src))
             return
@@ -189,6 +190,8 @@ class Convert(object):
 
         if self.dbini["rowtype"] == "python":
             self._fill_python(table, limit, order)
+        elif self.dbini["rowtype"] == "griepencorona":
+            self._fill_griepencorona(table, limit, order)
         elif self.dbini["rowtype"] == "sql":
             self._fill_sql(table, limit, order)
             if table + "2" in self.dbvals:
@@ -342,6 +345,138 @@ class Convert(object):
         if "orig_uid" in self.dbini and table == "survey":
             utils.drop_table("tmp_uid")
 
+    def _fill_griepencorona(self, table, limit, order, index=0):
+        if table == 'survey':
+            for table_week in sorted(self.get_griepencorona_tables().values()):
+                self._fill_griepencorona_survey('survey', order, table_week)
+            return
+
+        cols_new = list(self.dbvals[table]["new"].keys())
+        cols_new.remove('country')
+        rows = []
+        cursor = utils.query("""SELECT
+                orig_intake_nb20.id, user_id, meta_value,
+                IF(user_registered, DATE(user_registered), NULL)
+            FROM
+                {tbl}
+            {limit}        
+            {order}
+            LIMIT
+                {index}, {size}
+        """.format(
+            tbl=self.tables[table, "full"],
+            index=index,
+            size=config.LOCAL["db"]["size"],
+            limit="WHERE {}".format(limit) if limit else "",
+            order=order))
+
+        for row in cursor.fetchall():
+            sql_dict = self._get_sql_dict_griepencorona(row, table)
+            if sql_dict.get('country') == self.country:
+                rows.append([sql_dict[key] if key in sql_dict else None
+                             for key in cols_new])
+        if len(rows) > 0:
+            utils.query(
+                """INSERT INTO {tbl_new}
+                    ({columns}) VALUES ({values})
+                """.format(tbl_new=self.tables[table, "new"],
+                           columns=",".join(cols_new),
+                           values=",".join(["%s"] * len(cols_new))),
+                rows, many=True)
+            self._fill_griepencorona(table, limit, order,
+                              index + config.LOCAL["db"]["size"])
+
+    def _fill_griepencorona_survey(self, table, order, tbl_name):
+        """Filling the columns for the new table, reading line by line"""
+
+        cols_new = list(self.dbvals[table]["new"].keys())
+        rows = []
+        cursor = utils.query("""SELECT
+                {columns_old}
+            FROM
+                {tbl}
+            LEFT JOIN {intake_tbl} on {tbl}.user_id = {intake_tbl}.uid
+            WHERE
+                {intake_tbl}.uid is not null
+                {order}
+        """.format(
+            tbl=tbl_name,
+            intake_tbl=self.tables["intake", "new"],
+            columns_old=",".join(self.dbvals[table]["old"].keys()),
+            order=order))
+
+        for row in cursor.fetchall():
+            sql_dict = self._get_sql_dict(row, table)
+            rows.append([sql_dict[key] if key in sql_dict else None
+                         for key in cols_new])
+        if len(rows) > 0:
+            utils.query(
+                """INSERT INTO {tbl_new}
+                    ({columns}) VALUES ({values})
+                """.format(tbl_new=self.tables[table, "new"],
+                           columns=",".join(cols_new),
+                           values=",".join(["%s"] * len(cols_new))),
+                rows, many=True)
+
+    def _get_sql_dict_griepencorona(self, row, table):
+        """Return a sqldict of the row"""
+
+        sql_dict = {}
+        dbvals = self.dbvals[table]["old"]
+        for column, value in row.items():
+            if column == "meta_value":
+                for qa in value.split('^,'):
+                    if '$' not in qa:
+                        continue
+                    question, answer = qa.split('$', 1)
+
+                    if question == "Q2":
+                        match = re.match('0_(\d+) ?/ ?(\d{4})', answer)
+                        if match:
+                            answer = '{0}-{1}-01'.format(match.group(2), match.group(1))
+                        else:
+                            answer = None
+                    elif question in ["Q3", "Q4b"]:
+                        match = re.match('0_(\d{4})', answer)
+                        if match:
+                            answer = match.group(1)
+                        else:
+                            answer = None
+                    elif question == "Q6":
+                        age_group = {
+                            0: '0:4',
+                            1: '5:18',
+                            2: '19:44',
+                            3: '45:64',
+                            4: '65:120'
+                        }
+                        try:
+                            age_groups = []
+                            for group in answer.split(','):
+                                age_group_id, total = group.split('_')
+
+                                age_groups.extend(int(total) * [age_group[int(age_group_id)]])
+                            answer = '-'.join(age_groups)
+                        except Exception:
+                            answer = None
+                    elif question == "Q9b2":
+                        match = re.match('0_(\d{2})-(\d{2})-(\d{4})', answer)
+                        if match:
+                            answer = '{0}-{1}-{2}'.format(match.group(3), match.group(2), match.group(1))
+                        else:
+                            answer = None
+                    elif question == "Q17":
+                        a = 3
+                        pass
+                    try:
+                        self._add_to_sqldict(question, answer, sql_dict, dbvals)
+                    except IAPError:
+                        logger.info("Question %s not defined", question)
+                        continue
+            else:
+                self._add_to_sqldict(column, value, sql_dict, dbvals)
+        return sql_dict
+
     def _fill_python(self, table, limit, order, index=0):
         """Filling the columns for the new table, reading line by line"""
 
@@ -403,39 +538,43 @@ class Convert(object):
         else:
             return [value]
 
+    def _add_to_sqldict(self, column, value, sql_dict, dbvals):
+        column = self.get_column(column, dbvals.keys())
+        if "python" in self.dbini and column in self.dbini["python"]:
+            # the variable "value" is directly manipulated
+            # (Use of exec) pylint: disable=W0122
+            exec(self.dbini["python"][column].format(value))
+            # (Use of exec) pylint: enable=W0122
+        if value is None:
+            return
+
+        values = self._value_to_list(value)
+        for aold in values:
+            if aold in dbvals[column]:
+                for qnew, anew in dbvals[column][aold]:
+                    self.add_value(sql_dict, qnew, anew)
+            if None in dbvals[column]:
+                for qnew, anew in dbvals[column][None]:
+                    if anew is None:
+                        sql_dict[qnew] = value
+                    else:
+                        try:
+                            value = int(value)
+                        except ValueError:
+                            continue
+                        for _counter in range(min(
+                                value,
+                                config.CONFIG["settings"]["max_count"])):
+                            self.add_value(sql_dict, qnew, anew)
+
     def _get_sql_dict(self, row, table):
         """Return a sqldict of the row"""
 
         sql_dict = {}
         dbvals = self.dbvals[table]["old"]
         for column, value in row.items():
-            column = self.get_column(column, dbvals.keys())
-            if "python" in self.dbini and column in self.dbini["python"]:
-                # the variable "value" is directly manipulated
-                # (Use of exec) pylint: disable=W0122
-                exec(self.dbini["python"][column].format(value))
-                # (Use of exec) pylint: enable=W0122
-            if value is None:
-                continue
+            self._add_to_sqldict(column, value, sql_dict, dbvals)
 
-            values = self._value_to_list(value)
-            for aold in values:
-                if aold in dbvals[column]:
-                    for qnew, anew in dbvals[column][aold]:
-                        self.add_value(sql_dict, qnew, anew)
-                if None in dbvals[column]:
-                    for qnew, anew in dbvals[column][None]:
-                        if anew is None:
-                            sql_dict[qnew] = value
-                        else:
-                            try:
-                                value = int(value)
-                            except ValueError:
-                                continue
-                            for _counter in range(min(
-                                    value,
-                                    config.CONFIG["settings"]["max_count"])):
-                                self.add_value(sql_dict, qnew, anew)
         return sql_dict
 
     @staticmethod
@@ -521,6 +660,8 @@ class Convert(object):
                 if self.dbini["dbtype"] == "epi" \
                 else self.download_sql(ssh_exec, ssh_params) \
                 if self.dbini["dbtype"] == "sql" \
+                else self.download_griepencorona(ssh_exec, ssh_params) \
+                if self.dbini["dbtype"] == "griepencorona" \
                 else None
 
         logger.info("Download data for {0}".format(self.src))
@@ -593,6 +734,73 @@ class Convert(object):
                  list(ssh_params["tables_translate"]) +
                  [self.tables["intake", "orig"]] +
                  [self.tables["survey", "orig"]])])
+        ssh_exec(("sed {replace} {server_sqlfile}" +
+                  " > {server_sqlfile}.tmp").format(
+                      replace=replace,
+                      server_sqlfile=server_sqlfile))
+        ssh_exec("mv {0}.tmp {0}".format(server_sqlfile))
+
+        ssh_exec("bzip2 -f {0}".format(server_sqlfile))
+        return server_file
+
+    def get_griepencorona_tables(self):
+        start = datetime.date(2020, 11, 16)
+        end = datetime.date(2020, 5, 1)
+        end = max(datetime.date.today(), end)
+
+        tables = {}
+        while start <= end:
+            week = start.isocalendar()[1]
+            year = start.isocalendar()[0] % 1000
+            tables['enquete_{0:02d}_{1:02d}'.format(week, year)] = 'orig_survey_nb20_{0:02d}{1:02d}'.format(year, week)
+            start += datetime.timedelta(days=7)
+        return tables
+
+        # cmd = ("{mysql} {db} -Bse 'show tables like enquete_%' > {server_tablesfile}").format(
+        #     mysql=ssh_params["mysql"],
+        #     db=db,
+        #     server_tablesfile=server_tablesfile)
+
+    def download_griepencorona(self, ssh_exec, ssh_params):
+        """Download data from mysql server"""
+
+        logger.info("Generate sql for {0}".format(self.src))
+        server_sqlfile = "{0}/{1}.sql".format(
+            config.CONFIG["settings"]["server_tmp"], self.src)
+        server_tablesfile = "{0}/{1}.tables".format(
+            config.CONFIG["settings"]["server_tmp"], self.src)
+        server_file = "{0}/{1}.sql.bz2".format(
+            config.CONFIG["settings"]["server_tmp"], self.src)
+
+        tables = {
+            **self.get_griepencorona_tables(),
+            **{'usermeta': 'orig_intake_nb20'}
+        }
+        db = "deb128820n4_griepmeta"
+
+        cmd = ("{mysqldump} --quote-names --opt {db}" +
+               " {tables} > {server_sqlfile}").format(
+                   mysqldump=ssh_params["mysqldump"],
+                   db=db,
+                   tables=" ".join(tables.keys()),
+                   server_sqlfile=server_sqlfile)
+        ssh_exec(cmd)
+
+        tables2 = {
+            'wp_users': 'orig_intake_nb20_wp_users',
+        }
+        db2 = "deb128820n4_wp1"
+        cmd2 = ("{mysqldump} --quote-names --opt {db}" +
+               " {tables} >> {server_sqlfile}").format(
+                   mysqldump=ssh_params["mysqldump2"],
+                   db=db2,
+                   tables=" ".join(tables2.keys()),
+                   server_sqlfile=server_sqlfile)
+        ssh_exec(cmd2)
+
+        replace = " ".join(
+            ["-e s/\\`{}\\`/\\`{}\\`/g".format(orig, new)
+             for orig, new in {**tables, **tables2}.items()])
         ssh_exec(("sed {replace} {server_sqlfile}" +
                   " > {server_sqlfile}.tmp").format(
                       replace=replace,

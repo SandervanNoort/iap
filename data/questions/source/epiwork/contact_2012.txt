@@ -1,0 +1,77 @@
+timestamp: Compilation Date
+  builtin
+
+Q1: How many people did you have conversational contact with yesterday (talking face to face)?
+   0: 0
+   1: 1
+   2: 2
+   3: 3
+   4: 4
+   5: 5
+   6: 6
+   7: 7
+   8: 8
+   9: 9
+  10: 10
+  11: 11
+  12: 12
+  13: 13
+  14: 14
+  15: 15
+  16: 16-24
+  25: 25-49
+  50: 50-99
+ 100: +100
+
+Q2: How many people did you have physical contact with yesterday (skin-to-skin contact, e.g. handshake, kiss)?
+   0: 0
+   1: 1
+   2: 2
+   3: 3
+   4: 4
+   5: 5
+   6: 6
+   7: 7
+   8: 8
+   9: 9
+  10: 10
+  11: 11
+  12: 12
+  13: 13
+  14: 14
+  15: 15
+  16: 16-24
+  25: 25-49
+  50: 50-99
+ 100: +100
+
+Q3: How much time did you spend on public transport (e.g. bus, train, underground) yesterday?
+   0: No time at all
+   1: 0-30 minutes
+   2: 30 minutes - 1.5 hours
+   3: 1.5 hours - 4 hours
+   4: Over 4 hours
+
+Q4: How long did you spend in an enclosed indoor space (e.g. office, classroom, bar, cinema) with more than 10 other people yesterday? (Not including public transport)
+   0: No time at all
+   1: 0-30 minutes
+   2: 30 minutes - 1.5 hours
+   3: 1.5 hours - 4 hours
+   4: Over 4 hours
+
+Q5: What was the furthest distance from home that you travelled yesterday?
+   0: Under 1 mile
+   1: 1-4 miles
+   2: 5-9 miles
+   3: 10-29 miles
+   4: 30-100 miles
+   5: Over 100 miles
+
+Q5b: What was the furthest distance from home that you travelled yesterday?
+   0: Under 1 km
+   1: 1-5 km
+   2: 6-15 km
+   3: 16-50 km
+   4: 51-150
+   5: Over 150 km
+

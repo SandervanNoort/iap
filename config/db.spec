@@ -1,5 +1,5 @@
-rowtype = option("python", "sql")
-dbtype = option("epi", "zip", "sql", "dump")
+rowtype = option("python", "sql", "griepencorona")
+dbtype = option("epi", "zip", "sql", "dump", "griepencorona")
 interval = integer(default=7)
 # country = string
 delimiter = string(default=",")

@@ -1,0 +1,195 @@
+timestamp: None
+  builtin
+
+Q0: Wie wilt u aanmelden als griepmeter?
+   0: Mezelf
+   1: Een gezinslid
+   2: Iemand anders
+
+Q1: Wat is uw geslacht?
+   0: Man
+   1: Vrouw
+
+Q2: Wat is uw geboortedatum?
+  wok.pollster.datatypes.YearMonth
+
+Q3: Wat zijn de vier cijfers van uw postcode?
+  wok.pollster.datatypes.PostalCode
+
+Q4: Wat is uw voornaamste bezigheid overdag?
+   0: Ik werk fulltime in loondienst
+   1: Ik werk parttime in loondienst
+   2: Ik werk als zelfstandige/ondernemer
+   3: Ik ben scholier of student
+   4: Ik ben huisman/huisvrouw
+   5: Ik ben werkloos
+   6: Ik ben thuis vanwege langdurige ziekte of zwangerschapsverlof
+   7: Ik ben met pensioen
+   8: Anders
+
+Q4b: Wat zijn de eerste vier cijfers van de postcode van uw werkplek/school/universiteit?
+   0: Postcode
+   1: Dat weet ik niet
+   2: Niet van toepassing/ik heb geen vaste werkplek
+
+Q4c: Welke omschrijving past het best bij uw dagelijkse werkzaamheden?
+   0: Professional
+   1: Kantoorwerk
+   2: Verkoop, horeca en vrije tijd
+   3: Technisch handwerk
+   4: Ander handwerk
+   5: Anders
+
+Q4d: Wat is uw hoogst genoten opleiding?
+   0: Ik heb geen officiële diploma’s
+   1: Mavo of vmbo
+   2: Havo, vwo of MBO
+   3: HBO of WO bachelor
+   4: WO master/PhD (doctor)
+   5: Ik ben nog bezig met een opleiding
+
+Q5: Heeft u tijdens een normale dag contact met
+   0: Meer dan 10 kinderen of jongeren
+   1: Meer dan 10 mensen van 65 jaar of ouder
+   2: Patiënten
+   3: Groepen mensen groter dan 10 personen
+   4: Geen van bovenstaande antwoorden is van toepassing
+
+Q6: INCLUSIEF UZELF, hoeveel personen van de onderstaande leeftijdsgroepen wonen er in uw huishouden?
+   0: 0 tot 4 jaar
+   1: 5 tot 18 jaar
+   2: 19 tot 44 jaar
+   3: 45 tot 64 jaar
+   4: 65 jaar of ouder
+
+Q6b: Hoeveel kinderen in de leeftijd van 0 tot 4 jaar uit uw huishouden gaan naar school of naar de dagopvang?
+   0: Geen
+   1: None
+   2: None
+   3: None
+   4: None
+   5: None
+  99: Meer dan 5
+
+Q7: Hoe verplaatst u zich meestal?
+   0: Lopend
+   1: Op de fiets
+   2: Met de scooter of motor
+   3: Met de auto
+   4: Met het openbaar vervoer
+   5: Anders
+
+Q7b: Hoeveel tijd brengt u op een normale dag door in het openbaar vervoer?
+   0: Ik ga normaal gesproken niet met het openbaar vervoer
+   1: 0 tot 30 minuten
+   2: 30 minuten tot 1.5 uur
+   3: 1.5 uur tot 4 uur
+   4: Meer dan 4 uur
+
+Q8: Hoe vaak heeft u last van verkoudheid of griepachtige verschijnselen?
+   0: Nooit
+   1: 1 of 2 keer per jaar
+   2: Tussen 3 en 5 keer per jaar
+   3: Tussen 6 en 10 keer per jaar
+   4: Meer dan 10 keer per jaar
+   5: Dat weet ik niet
+
+Q9: Heeft u vorig seizoen een griepprik gehaald?
+   0: Ja
+   1: Nee
+   2: Dat weet ik niet (meer)
+
+Q10: Heeft u een griepprik gehaald voor het komende seizoen?
+   0: Ja
+   1: Nee
+   2: Dat weet ik niet (meer)
+
+Q10b: Wanneer bent u voor dit seizoen gevaccineerd tegen de griep?
+   1: Kies een datum:
+   0: Dat weet ik niet (meer)
+
+Q10c: Wat waren voor u de belangrijkste redenen om dit jaar een griepprik te halen?
+   0: Ik behoor tot een risicogroep (zwanger, 65 jaar of ouder, chronische ziekte)
+   1: Vaccinatie voorkomt dat ik zelf griep krijg
+   2: Vaccinatie voorkomt dat ik het griepvirus verspreidt naar andere mensen
+   3: Mijn huisarts heeft me de griepprik aangeraden
+   4: De griepprik werd aangeraden op mijn werk/op school
+   5: De griepprik is voor mij makkelijk beschikbaar
+   6: De griepprik was gratis
+   7: Ik wil deze winter geen werk/school missen
+   8: Ik haal de griepprik altijd
+   9: Andere reden
+
+Q10d: Wat waren voor u de belangrijkste redenen om dit jaar geen griepprik te halen?
+   0: Ik wil de griepprik gaan halen, maar heb dat nog niet gedaan
+   1: De griepprik is mij niet aangeboden
+   2: Ik behoor niet tot een risicogroep
+   3: Ik vind het beter om een natuurlijke afweer tegen het griepvirus op te bouwen
+   4: Ik heb twijfels over de werkzaamheid van de griepprik
+   5: Griep is geen ernstige ziekte
+   6: Ik denk dat ik maar een kleine kans heb om dit jaar griep te krijgen
+   7: Ik geloof dat de griepprik juist griep veroorzaakt
+   8: Ik ben bang dat het vaccin niet veilig is en dat ik last zal krijgen van bijwerkingen
+   9: Ik hou er niet van om gevaccineerd te worden
+  10: De griepprik is voor mij niet makkelijk beschikbaar
+  11: De griepprik is voor mij niet gratis
+  12: Ik heb geen duidelijke reden
+  13: Hoewel mijn huisarts de griepprik heeft aangeraden, ben ik die toch niet gaan halen
+  14: Andere reden
+
+Q11: Gebruikt u medicatie voor een van de volgende aandoeningen?
+   0: Nee
+   1: Ja, voor astma
+   2: Ja, voor diabetes
+   3: Ja, voor longziekten (COPD, emfyseem)
+   4: Ja, voor hartaandoeningen
+   5: Ja, voor nieraandoeningen
+   6: Ja, voor een verzwakt afweersysteem
+
+Q12: Bent u momenteel zwanger?
+   0: Ja
+   1: Nee
+   2: Dat weet ik niet/wil ik niet zeggen
+
+Q12b: In welk trimester van de zwangerschap bent u?
+   0: Eerste trimester (tussen de 1 en 12 weken zwanger)
+   1: Tweede trimester (tussen de 13 en 28 weken zwanger)
+   2: Derde trimester (vanaf 29 weken zwanger tot de geboorte)
+   3: Dat weet ik niet/wil ik niet zeggen
+
+Q13: Rookt u?
+   0: Nee
+   1: Ja, af en toe
+   2: Dagelijks, maar wel minder dan 10 keer per dag
+   3: Dagelijks, 10 keer of vaker per dag
+   4: Dat weet ik niet/wil ik niet zeggen
+
+Q14: Heeft u een of meer van de volgende allergieën?
+   1: Hooikoorts
+   2: Allergie voor huisstofmijt
+   3: Allergie voor huisdieren
+   4: Een andere allergie waarvan ik verkoudheidsklachten (loopneus, tranende ogen) krijg
+   5: Nee, ik heb geen allergie waarvan ik verkoudheidsklachten krijg
+
+Q15: Volgt u een specifiek dieet?
+   0: Nee
+   1: Ik eet vegetarisch
+   2: Ik eet veganistisch
+   3: Ik eet calorie-arm
+   4: Ik volg een ander dieet
+
+Q16: Heeft u huisdieren?
+   0: Nee
+   1: Ja, één of meer honden
+   2: Ja, één of meer katten
+   3: Ja, één of meer vogels
+   4: Ja, één of meer andere dieren
+
+Q17: Waar hebt u voor het eerst van de Grote Griepmeting gehoord?
+   0: Op de radio of televisie
+   1: In een krant of tijdschrift
+   2: Via een internetsite (zoekmachine of link)
+   3: Door de poster van het project
+   4: Via familie of vrienden
+   5: Op school of het werk
+

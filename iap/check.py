@@ -46,8 +46,8 @@ class Check(Convert):
 
         for tbl, columns in missing_cols.items():
             for column in columns:
-                logger.warning("Column {column} in {tbl} is not" +
-                               " configured".format(column=column, tbl=tbl))
+                logger.warning("Column {column} in {tbl} is not configured".format(
+                    column=column, tbl=tbl))
 
     def add_extra_vals(self, dbvals, table):
         """Add the extra/removed/empty dbvals"""

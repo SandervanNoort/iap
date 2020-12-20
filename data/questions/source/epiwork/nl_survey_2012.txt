@@ -1,0 +1,153 @@
+timestamp: None
+  builtin
+
+Q1: Heeft u sinds uw vorige bezoek (of sinds afgelopen week als dit de eerste keer is dat u inlogt) last gehad van een of meer van de onderstaande symptomen?
+   0: Nee, geen symptomen
+   1: Koorts
+   2: Koude rillingen
+   3: Loopneus of verstopte neus
+   4: Niezen
+   5: Zere keel
+   6: Hoesten
+   7: Kortademigheid
+   8: Hoofdpijn
+   9: Spier/gewrichtspijn
+  10: Pijn op de borst
+  11: Gevoel van vermoeidheid/uitgeput
+  12: Verminderde eetlust
+  13: Verkleurd slijm
+  14: Waterige of bloeddoorlopen ogen
+  15: Misselijkheid
+  16: Overgeven
+  17: Diarree
+  18: Pijn in de maag
+  19: Andere symptomen
+
+Q2: Heeft u bij uw vorige bezoek gemeld dat u ziek was?
+   0: Ja
+   1: Nee
+   2: Dat weet ik niet (meer)
+
+Q3: Wanneer kwamen de eerste symptomen opzetten?
+   0: Kies datum:
+   1: Dat weet ik niet (meer)
+
+Q4: Wanneer namen de symptomen af?
+   0: Kies datum:
+   1: Dat weet ik niet (meer)
+   2: Ik ben nog steeds ziek
+
+Q5: Kwamen de symptomen plotseling binnen een paar uur opzetten?
+   0: Ja
+   1: Nee
+   2: Dat weet ik niet (meer)
+
+Q6: Wanneer kwam de koorts opzetten? 
+   1: Kies datum:
+   2: Dat weet ik niet (meer)
+
+Q6b: Kwam de koorts plotseling binnen een paar uur opzetten?
+   0: Ja
+   1: Nee
+   3: Dat weet ik niet (meer)
+
+Q6c: Heeft u uw temperatuur gemeten?
+   0: Ja
+   1: Nee
+   2: Dat weet ik niet (meer)
+
+Q6d: Wat was uw hoogst gemeten temperatuur?
+   0: 37°C of lager
+   1: None
+   2: None
+   3: None
+   4: None
+   5: 40°C of hoger
+   6: Dat weet ik niet (meer)
+
+Q7: Heeft u medische hulp gezocht vanwege uw symptomen? En zo ja, waar?
+   0: Nee
+   1: Ja, bij de huisarts
+   3: Ja, bij de eerste hulp van het ziekenhuis of de huisartsenpost
+   2: Ja, ik ben opgenomen in het ziekenhuis
+   4: Ja, ik heb andere medische hulp gezocht
+   5: Nog niet, maar ik heb wel een afspraak gemaakt
+
+Q7b: How soon after your symptoms appeared did you first VISIT a medical service?
+ 100: ---
+   0: Same day
+   1: 1 day
+   2: 2 days
+   3: 3 days
+   4: 4 days
+   5: 5-7 days
+   6: More than 7 days
+   7: I don't know/can't remember
+
+Q8: Heeft u vanwege uw symptomen telefonisch of via internet contact gezocht met instanties? En zo ja, welke?
+   0: Nee
+   1: Ja, ik heb mijn huisarts gebeld en heb alleen de assistente gesproken
+   2: Ja, ik heb mijn huisarts gebeld en heb met een dokter of verpleegkundige gesproken
+   3: Ja, ik heb contact gezocht met het Nivel (Nederlands instituut voor onderzoek van de gezondheidszorg)
+   4: Ja, ik heb contact gezocht met het RIVM (Rijksinstituut voor Volksgezondheid en Milieu)
+   5: Ja, ik heb contact gezocht met andere instanties.
+
+Q8b: How soon after your symptoms appeared did you first contact a medical service via TELEPHONE or INTERNET?
+ 100: ---
+   0: Same day
+   1: 1 day
+   2: 2 days
+   3: 3 days
+   4: 4 days
+   5: 5-7 days
+   6: More than 7 days
+   7: I don't know/can't remember
+
+Q9: Heeft u vanwege uw symptomen medicijnen gebruikt? En zo ja, welke?
+   0: Nee, ik heb geen medicijnen gebruikt
+   1: Ja, pijnstillers zoals paracetamol, aspirine of ibuprofen
+   2: Ja, medicijnen om het hoesten te onderdrukken
+   3: Ja, antivirale middelen zoals Tamiflu of Relenza
+   4: Ja, antibiotica
+   5: Ja, andere medicijnen
+   6: Dat weet ik niet (meer)
+
+Q9b: Hoe snel nadat uw symptomen opkwamen bent u begonnen met het gebruik van antivirale middelen?
+   0: Dezelfde dag (binnen 24 uur na opkomen van de eerste symptomen)
+   1: Na 1 dag
+   2: Na 2 dagen
+   3: Na 3 dagen
+   4: Na 4 dagen
+   5: Na 5 tot 7 dagen
+   6: Na meer dan 7 dagen
+   7: Dat weet ik niet (meer)
+
+Q10: Heeft u vanwege uw symptomen uw dagelijkse bezigheden moeten aanpassen?
+   0: Nee
+   1: Ja, maar ik ben wel gewoon naar werk/school gegaan
+   2: Ja, ik ben thuis gebleven terwijl ik eigenlijk naar werk/school had gemoeten
+
+Q10b: Bent u vandaag nog steeds ziek thuis?
+   0: Ja
+   1: Nee
+   3: Ik had vandaag sowieso niet naar werk/school gehoeven
+
+Q10c: Hoe lang bent u niet naar werk/school geweest?
+   0: 1 dag
+   1: 2 dagen
+   2: 3 dagen
+   3: 4 dagen
+   4: 5 dagen
+   5: 6 tot 10 dagen
+   6: 11 tot 15 dagen
+   7: Meer dan 15 dagen
+
+Q11: Heeft u zelf enig idee waar uw klachten vandaan komen?
+   0: Ja, ik heb griep of griepachtige verschijnselen
+   1: Ja, ik ben verkouden
+   2: Ja, van een allergie zoals hooikoorts
+   6: Ashtma
+   3: Ja, ik heb maag-darmklachten of buikgriep
+   4: Ja, ik heb een andere ziekte die de klachten veroorzaakt
+   5: Nee, ik heb geen idee
+

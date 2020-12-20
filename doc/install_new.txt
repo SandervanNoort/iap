@@ -1,0 +1,33 @@
+Clone alle repostories
+
+git clone https://github.com/SandervanNoort/iap.git
+git clone https://github.com/SandervanNoort/webiap.git
+git clone https://github.com/SandervanNoort/iap-results.git
+git clone https://github.com/SandervanNoort/pyfig.git
+git clone https://github.com/SandervanNoort/mconvert.git
+
+cp doc/local.ini naar config/local.ini en edit
+
+sudo apt install virtualenv ttf-mscorefonts-installer libpython3.6-dev libmysqlclient-dev postgresql-client-common
+
+mysql:
+  create database griepmeting
+  create user griepmeting identified by 'w6mUKjOM7ApHv5bOmVnm7Ijz';
+  grant all on griepmeting.* to griepmeting;
+  grant file on griepmeting.* to griepmeting;
+  flush privileges
+
+virtualenv -p python3 venv
+source venv/bin/activate
+
+pip install -r iap/requirements.txt
+
+source bin/fill_path.sh
+bin/iap_cmd.py -table ALL -fill age
+
+fill the folder iap/download (rsync b.v.)
+
+bin/iap_cmd -noaa nl be 2003-2015
+
+optional to clear font cache (if matplotlib was once run before ttf fonts are installed)
+iap/bin/clear_mpl_cache.py

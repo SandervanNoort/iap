@@ -1,0 +1,153 @@
+timestamp: Compilation Date
+  builtin
+
+Q1: Have you had any of the following symptoms since your last visit (or in the past weeks, if this is your first visit)?
+   0: No symptoms
+   1: Fever
+   2: Chills
+   3: Runny or blocked nose
+   4: Sneezing
+   5: Sore thoat
+   6: Cough
+   7: Shortness of breath
+   8: Headache
+   9: Muscle/joint pain
+  10: Chest pain
+  11: Feeling tired or exhausted (malaise)
+  12: Loss of appetite
+  13: Coloured sputum/phlegm
+  14: Watery, bloodshot eyes
+  15: Nausea
+  16: Vomiting
+  17: Diarrhoea
+  18: Stomach ache
+  19: Other
+
+Q2: On your last visit, you reported that you were still ill. Are the symptoms you report today part of the same bout of illness?
+   0: Yes
+   1: No
+   2: I don't know/can't remember
+
+Q3: When did the first symptoms appear?
+   0: Choose date
+   1: I don't know/can't remember
+
+Q4: When did your symptoms end?
+   0: Choose date
+   1: I don't know/can't remember
+   2: I am still ill
+
+Q5: Did your symptoms develop suddenly over a few hours?
+   0: Yes
+   1: No
+   2: I don't know/can't remember
+
+Q6: When did your fever begin?
+   1: Choose date
+   2: I don't know/can't rember
+
+Q6b: Did your fever develop suddenly over a few hours?
+   0: Yes
+   1: No
+   3: I don't know
+
+Q6c: Did you take your temperature?
+   0: Yes
+   1: No
+   2: I don't know
+
+Q6d: What was your highest temperature measured?
+   0: Below 37°C
+   1: 37° - 37.4°C
+   2: 37.5° - 37.9°C
+   3: 38° - 38.9°C
+   4: 39° - 39.9°C
+   5: 40°C or more
+   6: I don't know/can't remember
+
+Q7: Because of your symptoms, did you VISIT (see face to face) any medical services?
+   0: No
+   1: GP or GP's practice nurse
+   3: Hospital accident & emergency department / out of hours service
+   2: Hospital admission
+   4: Other medical services
+   5: No, but I have an appointment scheduled
+
+Q7b: How soon after your symptoms appeared did you first VISIT a medical service?
+ 100: ---
+   0: Same day
+   1: 1 day
+   2: 2 days
+   3: 3 days
+   4: 4 days
+   5: 5-7 days
+   6: More than 7 days
+   7: I don't know/can't remember
+
+Q8: Because of your symptoms, did you contact via TELEPHONE or INTERNET any of medical services?
+   0: No
+   1: GP - spoke to receptionist only
+   2: GP - spoke to doctor or nurse
+   3: NHS Direct / NHS 24 / NHS Choices
+   4: NPFS
+   5: Other
+
+Q8b: How soon after your symptoms appeared did you first contact a medical service via TELEPHONE or INTERNET?
+ 100: ---
+   0: Same day
+   1: 1 day
+   2: 2 days
+   3: 3 days
+   4: 4 days
+   5: 5-7 days
+   6: More than 7 days
+   7: I don't know/can't remember
+
+Q9: Did you take medication for these symptoms (tick all that apply)?
+   0: No medication
+   1: Pain killers (e.g. paracetamol, lemsip, ibuprofen, aspirin, calpol, etc)
+   2: Cough medication (e.g. expectorants)
+   3: Antivirals (Tamiflu, Relenza)
+   4: Antibiotics
+   5: Other
+   6: I don't know/can't remember
+
+Q9b: How long after the beginning of your symptoms did you start taking antiviral medication?
+   0: Same day (within 24 hours)
+   1: 1 day
+   2: 2 days
+   3: 3 days
+   4: 4 days
+   5: 5-7 days
+   6: More than 7 days
+   7: I don't know/can't remember
+
+Q10: Did you change your daily routine because of your illness?
+   0: No
+   1: Yes, but I did not take time off work/school
+   2: Yes, I took time off work/school
+
+Q10b: Are you still off work/school?
+   0: Yes
+   1: No
+   3: Other (e.g. I wouldn’t usually be at work/school today anyway)
+
+Q10c: How long have you been off work/school?
+   0: 1 day
+   1: 2 days
+   2: 3 days
+   3: 4 days
+   4: 5 days
+   5: 6 to 10 days
+   6: 11 to 15 days
+   7: More than 15 days
+
+Q11: What do you think is causing your symptoms?
+   0: Flu or flu-like illness
+   1: Common cold
+   2: Allergy/hay fever
+   6: Ashtma
+   3: Gastroenteritis/gastric flu
+   4: Other
+   5: I don't know
+

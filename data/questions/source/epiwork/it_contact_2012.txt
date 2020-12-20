@@ -1,0 +1,77 @@
+timestamp: None
+  builtin
+
+Q1: Con quante persone circa hai avuto un contatto faccia a faccia ieri?
+   0: None
+   1: None
+   2: None
+   3: None
+   4: None
+   5: None
+   6: None
+   7: None
+   8: None
+   9: None
+  10: None
+  11: None
+  12: None
+  13: None
+  14: None
+  15: None
+  16: None
+  25: None
+  50: None
+ 100: None
+
+Q2: Con quante persone circa hai avuto un contatto fisico ieri (ad es. strette di mano, baci)?
+   0: None
+   1: None
+   2: None
+   3: None
+   4: None
+   5: None
+   6: None
+   7: None
+   8: None
+   9: None
+  10: None
+  11: None
+  12: None
+  13: None
+  14: None
+  15: None
+  16: None
+  25: None
+  50: None
+ 100: None
+
+Q3: Quanto tempo circa hai trascorso ieri sui mezzi pubblici (ad es. bus, treno, metropolitana)?
+   0: Non ho usato i mezzi pubblici
+   1: 0-30 minuti
+   2: 30 minuti - 1.5 ore
+   3: 1.5 - 4 ore
+   4: Più di 4 ore
+
+Q4: Quanto tempo circa hai trascorso ieri in un ambiente chiuso con più di dieci persone (ad es. in ufficio, in classe, al bar, al cinema)? (Escludendo i mezzi pubblici)
+   0: Non sono stato in luoghi affollati o con più di dieci persone
+   1: 0-30 minuti
+   2: 30 minuti - 1.5 ore 
+   3: 1.5 - 4 ore
+   4: Più di 4 ore
+
+Q5: Qual è stata la massima distanza da casa a cui hai viaggiato ieri?
+   0: Meno di 2 km
+   1: 2-7 km
+   2: 8-15 km
+   3: 16-50 km
+   4: 51-160 km
+   5: Più di 160 km
+
+Q5b: What was the furthest distance from home that you travelled yesterday?
+   0: Under 1 km
+   1: 1-5 km
+   2: 6-15 km
+   3: 16-50 km
+   4: 51-150
+   5: Over 150 km
+

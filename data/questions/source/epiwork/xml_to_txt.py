@@ -11,6 +11,7 @@ import collections
 import os
 import codecs
 import sys  # pylint: disable=W0611
+import io
 
 pat = re.compile(r"\{.*\}(.*)")
 
@@ -19,9 +20,9 @@ class EpiXml:
     """Class which read xml questionnaires from epiwork"""
 
     def __init__(self, xml_name):
-        print "Converting {0}".format(xml_name)
+        print("Converting {0}".format(xml_name))
         self.xml_name = xml_name
-        with open(self.xml_name, "r") as fobj:
+        with io.open(self.xml_name, "r") as fobj:
             contents = fobj.read()
         self.tree = ET.fromstring(re.sub("xmlns=", "_xmlns=", contents))
         self.trans = self.get_trans()
@@ -100,6 +101,8 @@ class EpiXml:
 
 
 if __name__ == "__main__":
+    xml = EpiXml("intake_2012.xml")
+    xml.convert()
     for dirpath, dirnames, fnames in os.walk("."):
         for fname in fnames:
             if os.path.splitext(fname)[1] == ".xml":
