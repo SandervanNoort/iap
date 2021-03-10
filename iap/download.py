@@ -398,7 +398,8 @@ def noaa_download(country, year, overwrite=False):
         try:
             fdurl.fp.fp._sock.shutdown(socket.SHUT_RDWR)
         except Exception:
-            print("TODO: force shutdown")
+            # TODO: force shutdown
+            pass
         # (access to protected member) pylint: enable=W0212
     except IOError as err:
         logger.error("Failed download {0}: {1}".format(action, err))
