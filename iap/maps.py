@@ -165,8 +165,15 @@ class FigMap(object):
                 pixdata[xval, yval] = self.settings["none_color"]
 
         self.draw.text(
+            (xmin, ymin - 2 * self.settings["font"]["legend"] - 2 * margin),
+            self.translate(self.settings["map_label"]),
+            (0, 0, 0),
+            font=PIL.ImageFont.truetype(
+                self.settings["fontfile"],
+                size=self.settings["font"]["legend"]))
+        self.draw.text(
             (xmin, ymin - self.settings["font"]["legend"] - margin),
-            self.translate("<<casedef:ili>> / 100,000"),
+            self.translate("<<measure:incidence>> <<measure:incidence_unit>>"),
             (0, 0, 0),
             font=PIL.ImageFont.truetype(
                 self.settings["fontfile"],
