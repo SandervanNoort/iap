@@ -27,7 +27,7 @@ from .exceptions import IAPError
 from . import utils, config, tools
 
 EXTENSIONS = {"zip": "zip", "epi": "sql.gz", "sql": "sql.bz2",
-              "dump": "dump", "griepencorona": "sql.bz2"}
+              "dump": "dump", "griepencorona": "sql.gz"}
 TMP_SQL = "/tmp/new.sql"
 logger = logging.getLogger(__name__)
 
@@ -746,7 +746,7 @@ class Convert(object):
     def get_griepencorona_tables(self):
         start = datetime.date(2020, 11, 16)
         end = datetime.date(2020, 5, 1)
-        end = max(datetime.date.today() - datetime.timedelta(days=1), end)
+        end = max(datetime.date.today() - datetime.timedelta(days=0), end)
 
         tables = {}
         while start <= end:
@@ -769,7 +769,7 @@ class Convert(object):
             config.CONFIG["settings"]["server_tmp"], self.src)
         server_tablesfile = "{0}/{1}.tables".format(
             config.CONFIG["settings"]["server_tmp"], self.src)
-        server_file = "{0}/{1}.sql.bz2".format(
+        server_file = "{0}/{1}.sql.gz".format(
             config.CONFIG["settings"]["server_tmp"], self.src)
 
         tables = {
@@ -807,7 +807,7 @@ class Convert(object):
                       server_sqlfile=server_sqlfile))
         ssh_exec("mv {0}.tmp {0}".format(server_sqlfile))
 
-        ssh_exec("bzip2 -f {0}".format(server_sqlfile))
+        ssh_exec("gzip {0}".format(server_sqlfile))
         return server_file
 
     def sqlimport(self):

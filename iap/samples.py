@@ -202,6 +202,8 @@ def get_limits(season, country, samples_onsets, average=None):
     min_date, max_date = utils.get_limits(season, country, average)
     min_date2, max_date2 = get_range(
         country, season, samples_onsets, average=average)
-    min_date = max(min_date, min_date2)
-    max_date = min(max_date, max_date2)
+    if min_date2 is not None:
+        min_date = max(min_date, min_date2)
+    if max_date2 is not None:
+        max_date = min(max_date, max_date2)
     return min_date, max_date
