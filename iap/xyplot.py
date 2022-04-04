@@ -406,7 +406,7 @@ class XYPlot(Base):
             index = len([
                 date for date in dates
                 if date < utils.get_date(self.settings["plot_start"],
-                                         options["season"])])
+                                         options["season"], seasonYear=1)])
             dates = dates[index:]
             values = values[index:]
             start = max(0, start - index)
@@ -415,7 +415,7 @@ class XYPlot(Base):
             index = len([
                 date for date in dates
                 if date <= utils.get_date(
-                    self.settings["plot_end"], options["season"])])
+                    self.settings["plot_end"], options["season"], seasonYear=2)])
             dates = dates[0:index]
             values = values[0:index]
             end = min(end, index)
@@ -783,9 +783,9 @@ class XYPlot(Base):
                 xmax = xmax.replace(day=1, month=xmax.month + 1)
 
         if self.settings["plot_start"] != "":
-            xmin = utils.get_date(self.settings["plot_start"])
+            xmin = utils.get_date(self.settings["plot_start"], seasonYear=1)
         if self.settings["plot_end"] != "":
-            xmax = utils.get_date(self.settings["plot_end"])
+            xmax = utils.get_date(self.settings["plot_end"], seasonYear=2)
         self.ax.set_xlim(xmin, xmax)
 
     def get_ylabel(self, ax_name):

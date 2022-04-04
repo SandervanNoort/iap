@@ -269,7 +269,7 @@ def update_selected(selected, complete):
     selected["periods"].extend(extra_periods)
 
 
-def get_date(datestring, season=None):
+def get_date(datestring, season=None, seasonYear=None):
     """Return a date, given in the format
             YYYY-MM-DD
             MM-DD + period
@@ -291,7 +291,12 @@ def get_date(datestring, season=None):
                 config.CONFIG["settings"]["reference_season"])
         else:
             year1, year2 = season_to_years(season)
-        if elements[0] >= 8:
+
+        if seasonYear == 1:
+            return datetime.date(year1, elements[0], elements[1])
+        elif seasonYear == 2:
+            return datetime.date(year2, elements[0], elements[1])
+        elif elements[0] >= 8:
             return datetime.date(year1, elements[0], elements[1])
         else:
             return datetime.date(year2, elements[0], elements[1])
