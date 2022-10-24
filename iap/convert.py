@@ -171,7 +171,7 @@ class Convert(object):
         if self.src is None:
             return
 
-        if not utils.table_exists(self.tables[table, "orig"]) and (self.src != 'nb20' and self.src != 'nb21'):
+        if not utils.table_exists(self.tables[table, "orig"]) and (self.src != 'nb20' and self.src != 'nb21' and self.src != 'nb22'):
             logger.error("No downloaded {table} data for src: {src}".format(
                 table=table, src=self.src))
             return
